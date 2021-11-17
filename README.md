@@ -94,3 +94,31 @@ Have you found a bug :bug: ? Or maybe you have a nice feature :sparkles: to cont
 n8n is [fair-code](http://faircode.io) distributed under [**Apache 2.0 with Commons Clause**](https://github.com/n8n-io/n8n/blob/master/packages/cli/LICENSE.md) license.
 
 Additional information about license can be found in the [FAQ](https://docs.n8n.io/#/faq?id=license).
+
+
+# n8n with PostgreSQL
+
+Starts n8n with PostgreSQL as database.
+
+
+## Start
+
+To start n8n with PostgreSQL simply start docker-compose by executing the following
+command in the current folder.
+
+
+**IMPORTANT:** But before you do that change the default users and passwords in the [`.env`](.env) file!
+
+```
+docker-compose up -d
+```
+
+To stop it execute:
+
+```
+docker-compose stop
+```
+
+## Configuration
+
+The default name of the database, user and password for PostgreSQL can be changed in the [`.env`](.env) file in the current directory.
