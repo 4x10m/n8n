@@ -11,6 +11,8 @@ services:
       - POSTGRES_DB
       - POSTGRES_NON_ROOT_USER
       - POSTGRES_NON_ROOT_PASSWORD
+    ports:
+      - 5434:5432
     volumes:
       - ./init-data.sh:/docker-entrypoint-initdb.d/init-data.sh
 
@@ -34,7 +36,7 @@ services:
     links:
       - postgres
     volumes:
-      - ~/.n8n:/home/node/.n8n
+      - ./data/n8n-standalone:/home/node/.n8n
     # Wait 5 seconds to start n8n to make sure that PostgreSQL is ready
     # when n8n tries to connect to it
     command: /bin/sh -c "sleep 5; n8n start"
